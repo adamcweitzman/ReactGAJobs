@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="jobs">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>GA Jobs</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  	<link rel='stylesheet' href='/stylesheets/style.css' />		
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  
+    <div ng-controller="JobsController">
+
+      <form class="form-inline" role="form" action="/upload" method="/post">
+        <select>
+          <option value="hit_list">Hit List</option>
+          <option value="contact">Contact</option>
+          <option value="engagement">Engagement</option>
+          <option value="hired">Hired</option>
+        </select>
+        <input class="form-control" name="company" id="company" placeholder="Company">
+        <input class="form-control" name="contact" id="company" placeholder="Company">
+        <input class="form-control" name="company" id="company" placeholder="Company">
+        <button type="button" class="btn btn-default">Add</button>
+      </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="/javascripts/main.js"></script>
   </body>
 </html>
