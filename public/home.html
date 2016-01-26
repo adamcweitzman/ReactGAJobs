@@ -1,35 +1,63 @@
-<!DOCTYPE html>
-<html ng-app="jobs">
-  <head>
-    <title>GA Jobs</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-  	<link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="/javascripts/main.js"></script>
-  </head>
-  <body>
+<div class="time-slot" ng-controller="JobsController">
+  <div class="container-fluid">
+    <div id="textPreview">
+      <ul class="list-inline text-center">
+        <li id="select">{{formData.category}}</li>
+        <li id="company">{{formData.company}}</li>
+        <li id="contact">{{formData.contact}}</li>
+      </ul>
+    </div>
 
-  
-    <div class="time-slot" ng-controller="JobsController">
+    <form class="form-inline text-center" role="form" ng-submit="processForm()">
+      <select id="select" ng-model="formData.category">
+        <option value="Hit List">Hit List</option>
+        <option value="Contact">Contact</option>
+        <option value="Engagement">Engagement</option>
+        <option value="Hired">Hired</option>
+      </select>
+      <input type="text" ng-model="formData.company" class="form-control" name="company" id="company" placeholder="Company">
+      <input type="text" ng-model="formData.contact" class="form-control" name="contact" id="contact" placeholder="Contact">
+      <button type="submit" class="btn btn-success">Add</button>
+    </form>
 
-      <form class="form-inline" role="form" action="/upload" method="/post">
-        <select>
-          <option value="hit_list">Hit List</option>
-          <option value="contact">Contact</option>
-          <option value="engagement">Engagement</option>
-          <option value="hired">Hired</option>
-        </select>
-        <input type="text" ng-model="company" class="form-control" name="company" id="company" placeholder="Company">
-        <input type="text" ng-model="contact" class="form-control" name="contact" id="contact" placeholder="Contact">
-        <button type="button" class="btn btn-default">Add</button>
-      </form>
-      
-      <h1>this is home.html</h1>
-      <h1>{{company}}</h1>
-      <h1>{{contact}}</h1>
+    <div class="section text-center">
+
+      <div class="col-sm-3">Hit List
+
+        <div class="quote-container">
+          <i class="pin"></i>
+          <blockquote class="note yellow">
+            Blackbaud
+            <cite class="author">Jonathan Smith</cite>
+          </blockquote>
+        </div>
+
+        <div class="quote-container">
+          <i class="pin"></i>
+          <blockquote class="note yellow">
+            Blackbaud
+            <cite class="author">Jonathan Smith</cite>
+          </blockquote>
+        </div>
+
+      </div>
+
+      <div class="col-sm-3">Contact
+
+      </div>
+
+      <div class="col-sm-3">Engagement
+
+      </div>
+
+      <div class="col-sm-3">Hired
+
+      </div>
 
     </div>
 
-  </body>
-</html>
+  </div>           
+</div>
+
+
+

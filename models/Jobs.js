@@ -2,10 +2,9 @@ var mongoose = require('mongoose');
 
 
 var jobsSchema = new mongoose.Schema({
-  company: String
-  contact: String 
+  company: String,
+  contact: String, 
   category: String
-
 });
 
 
