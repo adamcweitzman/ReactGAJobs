@@ -2,14 +2,14 @@
 <html ng-app="jobs">
   <head>
     <title>GA Jobs</title>
-  
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
-  	
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-  	<link rel='stylesheet' href='/stylesheets/style.css' />		
+  	<link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/main.js"></script>
   </head>
   <body>
+
   
     <div class="time-slot" ng-controller="JobsController">
 
@@ -24,21 +24,12 @@
         <input type="text" ng-model="contact" class="form-control" name="contact" id="contact" placeholder="Contact">
         <button type="button" class="btn btn-default">Add</button>
       </form>
-
-
-     <script src="/javascripts/main.js"></script>
+      
+      <h1>this is home.html</h1>
+      <h1>{{company}}</h1>
+      <h1>{{contact}}</h1>
 
     </div>
 
-
-
-
-
-
-
-
-
-
-    <script src="/javascripts/main.js"></script>
   </body>
 </html>

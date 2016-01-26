@@ -1,16 +1,21 @@
 
 
-	var app = angular.module('jobs',[]).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+var app = angular.module('jobs',['ngRoute'])
 
-		$routeProvider
+app.config(function($routeProvider) {
 
-		.when('/', {
-            templateUrl: 'views/index.ejs',
-            controller: 'JobsController'
-        })
+	$routeProvider
+    .when('/', {
+      templateUrl: 'home.html',
+      controller: 'JobsController'
+    })
+})
 
-	}]);
+app.controller('JobsController',
+function($scope, $stateParams, posts){
 
-	app.controller('JobsController', function(){
-		this.products = jobs;
-	});
+});
+
+
+
+
