@@ -16,43 +16,48 @@ app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
 
 	//need to sepeate data into arrays based on their category to display
 
-	var hit_list = [];
-	var contact = [];
-	var engagement = [];
-	var hired = [];
+	// var hit_list = [];
+	// var contact = [];
+	// var engagement = [];
+	// var hired = [];
 
-function getJobData () {
-	$http.get('/api/jobs')
-    	.success(function(data) {
-	        for (i = 0; i < data.length; i++) {
-	        	if (data[i].category === 'Hit List') {
-	        		hit_list.push(data[i])
-	        	} else if (data[i].category === 'Contact') {
-	        		contact.push(data[i])
-	        	} else if (data[i].category === 'Engagement') {
-	        		engagement.push(data[i])
-	        	} else if (data[i].hired === 'Hired') {
-	        		hired.push(data[i])
-	        	}
-	        }
-	        $scope.hit_list = hit_list
-	        $scope.contact = contact
-	        $scope.engagement = engagement
-	        $scope.hired = hired 
-    });
-}
+	function getJobData () {
+		var hit_list = [];
+		var contact = [];
+		var engagement = [];
+		var hired = [];
+		$http.get('/api/jobs')
+	    	.success(function(data) {
+		        for (i = 0; i < data.length; i++) {
+		        	if (data[i].category === 'Hit List') {
+		        		hit_list.push(data[i])
+		        	} else if (data[i].category === 'Contact') {
+		        		contact.push(data[i])
+		        	} else if (data[i].category === 'Engagement') {
+		        		engagement.push(data[i])
+		        	} else if (data[i].category === 'Hired') {
+		        		hired.push(data[i])
+		        	}
+		        }
+		        $scope.hit_list = hit_list
+		        $scope.contact = contact
+		        $scope.engagement = engagement
+		        $scope.hired = hired 
+	    });
+	}
+	getJobData()
 
 	$scope.processForm = function() {
-		console.log($scope.formData)
 		$http({
 			method  : 'POST',
 			data    : $scope.formData,
 			url 	: '/api/jobs'
  		})
  		.success(function(data) {
-            console.log(data);
+ 			console.log(data)
         })
-        $scope.formData = {}
+        $scope.formData = {}; 
+        getJobData();   
 	}
 }]);
 
