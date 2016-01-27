@@ -24,39 +24,62 @@
 
       <div class="col-sm-3">Hit List
 
-        <div class="quote-container">
-          <i class="pin"></i>
-          <blockquote class="note yellow">
-            Blackbaud
-            <cite class="author">Jonathan Smith</cite>
-          </blockquote>
-        </div>
-
-        <div class="quote-container">
-          <i class="pin"></i>
-          <blockquote class="note yellow">
-            Blackbaud
-            <cite class="author">Jonathan Smith</cite>
-          </blockquote>
+        <div ng-repeat="job in hit_list">
+          <div class="quote-container">
+            <i class="pin"></i>
+            <blockquote class="note yellow">
+              {{job.company}}
+              <cite class="author">{{job.contact}}</cite>
+            </blockquote>
+          </div>
         </div>
 
       </div>
 
       <div class="col-sm-3">Contact
 
+        <div ng-repeat="job in contact">
+          <div class="quote-container">
+            <i class="pin"></i>
+            <blockquote class="note yellow">
+              {{job.company}}
+              <cite class="author">{{job.contact}}</cite>
+            </blockquote>
+          </div>
+        </div>
+
       </div>
 
       <div class="col-sm-3">Engagement
+
+        <div ng-repeat="job in engagement">
+          <div class="quote-container">
+            <i class="pin"></i>
+            <blockquote class="note yellow">
+              {{job.company}}
+              <cite class="author">{{job.contact}}</cite>
+            </blockquote>
+          </div>
+        </div>
 
       </div>
 
       <div class="col-sm-3">Hired
 
+        <div ng-repeat="job in hired">
+          <div class="quote-container">
+            <i class="pin"></i>
+            <blockquote class="note yellow">
+              {{job.company}}
+              <cite class="author">{{job.contact}}</cite>
+            </blockquote>
+          </div>
+        </div>
+
       </div>
 
-    </div>
-
-  </div>           
+    </div>           
+  </div>
 </div>
 
 

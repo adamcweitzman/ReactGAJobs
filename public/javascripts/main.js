@@ -21,14 +21,26 @@ app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
 	var engagement = [];
 	var hired = [];
 
+function getJobData () {
 	$http.get('/api/jobs')
     	.success(function(data) {
-	        $scope.jobs = data;
-	        console.log('this is scope.jobs', $scope.jobs);
 	        for (i = 0; i < data.length; i++) {
-
+	        	if (data[i].category === 'Hit List') {
+	        		hit_list.push(data[i])
+	        	} else if (data[i].category === 'Contact') {
+	        		contact.push(data[i])
+	        	} else if (data[i].category === 'Engagement') {
+	        		engagement.push(data[i])
+	        	} else if (data[i].hired === 'Hired') {
+	        		hired.push(data[i])
+	        	}
 	        }
-    })
+	        $scope.hit_list = hit_list
+	        $scope.contact = contact
+	        $scope.engagement = engagement
+	        $scope.hired = hired 
+    });
+}
 
 	$scope.processForm = function() {
 		console.log($scope.formData)

@@ -46,12 +46,12 @@ ul
   box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
 }
 
-.note .author {
+/*.note .author {
   display: block;
   margin: 0 0 0 0;
   text-align: left;
 }
-
+*/
 .yellow {
   background: #eae672;
   -webkit-transform: rotate(2deg);
