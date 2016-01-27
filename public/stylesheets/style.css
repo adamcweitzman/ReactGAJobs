@@ -32,6 +32,7 @@ ul
 .quote-container {
   margin-top: 50px;
   position: relative;
+
 }
 
 .note {
@@ -44,14 +45,16 @@ ul
   font-family: Satisfy;
   font-size: 18px;
   box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+
 }
 
-/*.note .author {
+.note .author {
   display: block;
-  margin: 0 0 0 0;
-  text-align: left;
+  margin: 10px 0 0 0;
+  text-align: center;
+
 }
-*/
+
 .yellow {
   background: #eae672;
   -webkit-transform: rotate(2deg);
@@ -100,18 +103,6 @@ ul
   top: 8px;
 }
 
-/*  transform: rotate(57.5deg);
-  -moz-transform: rotate(57.5deg);
-  -webkit-transform: rotate(57.5deg);
-  -o-transform: rotate(57.5deg);
-  -ms-transform: rotate(57.5deg);
-
-  transform-origin: 50% 100%;
-  -moz-transform-origin: 50% 100%;
-  -webkit-transform-origin: 50% 100%;
-  -ms-transform-origin: 50% 100%;
-  -o-transform-origin: 50% 100%;
-}*/
 
 .section {
   margin-top:30px;
