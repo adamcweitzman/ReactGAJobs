@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Droid Sans", Helvetica, Arial, sans-serif;
 }
 
@@ -7,10 +7,10 @@ a {
   color: #00B7FF;
 }
 
-#textPreview {
+/*#textPreview {
   min-height:65px;
   max-height:65px;
-}
+}*/
 
 #select {
   color:red;
@@ -50,9 +50,8 @@ ul
 
 .note .author {
   display: block;
-  margin: 10px 0 0 0;
+  margin: 20px 0 0 0;
   text-align: center;
-
 }
 
 .yellow {
@@ -71,7 +70,7 @@ ul
   width: 2px;
   position: absolute;
   left: 50%;
-  top: -16px;
+  top: -20px;
   z-index: 1;
 }
 

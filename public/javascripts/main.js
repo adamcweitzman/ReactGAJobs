@@ -14,13 +14,6 @@ app.config(['$routeProvider', function($routeProvider) {
 app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
 	console.log('in scope')
 
-	//need to sepeate data into arrays based on their category to display
-
-	// var hit_list = [];
-	// var contact = [];
-	// var engagement = [];
-	// var hired = [];
-
 	function getJobData () {
 		var hit_list = [];
 		var contact = [];
@@ -30,13 +23,13 @@ app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
 	    	.success(function(data) {
 		        for (i = 0; i < data.length; i++) {
 		        	if (data[i].category === 'Hit List') {
-		        		hit_list.push(data[i])
+		        		hit_list.unshift(data[i])
 		        	} else if (data[i].category === 'Contact') {
-		        		contact.push(data[i])
+		        		contact.unshift(data[i])
 		        	} else if (data[i].category === 'Engagement') {
-		        		engagement.push(data[i])
+		        		engagement.unshift(data[i])
 		        	} else if (data[i].category === 'Hired') {
-		        		hired.push(data[i])
+		        		hired.unshift (data[i])
 		        	}
 		        }
 		        $scope.hit_list = hit_list
@@ -58,6 +51,17 @@ app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
         })
         $scope.formData = {}; 
         getJobData();   
+	}
+	$scope.delete = function(e) {
+		console.log(e)
+		$http({
+			method  : 'DELETE',
+			data    : {data: 'data'},
+			url 	: '/api/1'
+ 		})
+ 		.success(function(data) {
+ 			console.log('this is deleted', data)
+ 		})
 	}
 }]);
 

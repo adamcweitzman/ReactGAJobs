@@ -25,4 +25,8 @@ router.get('/api/jobs', function(req, res) {
     });
 });
 
+router.delete('/api/jobs', function(req, res) {
+	console.log('this is router', req.body.data)
+})
+
 module.exports = router;
