@@ -41,6 +41,7 @@ app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
 	getJobData()
 
 	$scope.processForm = function() {
+		console.log('this is the form data', $scope.formData)
 		$http({
 			method  : 'POST',
 			data    : $scope.formData,
@@ -60,7 +61,7 @@ app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
 			url 	: '/api/delete'
  		})
  		.success(function(data) {
- 			console.log('this is deleted', data)
+ 			console.log(data)
 
  		})
  		getJobData();  

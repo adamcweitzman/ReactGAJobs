@@ -17,6 +17,7 @@ router.post('/api/jobs', function(req, res, next) {
 	job.save(function(err) {
 		if (err) throw err;
   	})
+  	res.send('the post went through')
 });
 
 router.get('/api/jobs', function(req, res) {
@@ -31,6 +32,7 @@ router.post('/api/delete', function(req, res) {
     	if (err) throw err;
     	console.log('User successfully deleted!');
   	})
+  	res.send('the delete went through')
 })
 
 module.exports = router;
