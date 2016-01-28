@@ -48,10 +48,11 @@ app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
 			url 	: '/api/jobs'
  		})
  		.success(function(data) {
- 			console.log(data)
+ 			console.log(data);
+ 			getJobData(); 
         })
         $scope.formData = {}; 
-        getJobData();   
+  
 	}
 	$scope.delete = function(e) {
 		console.log(e)
@@ -61,10 +62,10 @@ app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
 			url 	: '/api/delete'
  		})
  		.success(function(data) {
- 			console.log(data)
-
+ 			console.log(data);
+ 			getJobData(); 
  		})
- 		getJobData();  
+ 		 
 
 	}
 }]);
