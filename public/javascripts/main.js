@@ -29,7 +29,7 @@ app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
 		        	} else if (data[i].category === 'Engagement') {
 		        		engagement.unshift(data[i])
 		        	} else if (data[i].category === 'Hired') {
-		        		hired.unshift (data[i])
+		        		hired.unshift(data[i])
 		        	}
 		        }
 		        $scope.hit_list = hit_list
@@ -55,13 +55,16 @@ app.controller('JobsController', ['$scope', '$http', function($scope, $http) {
 	$scope.delete = function(e) {
 		console.log(e)
 		$http({
-			method  : 'DELETE',
-			data    : {data: 'data'},
-			url 	: '/api/1'
+			method  : 'POST',
+			data    : {data: e},
+			url 	: '/api/delete'
  		})
  		.success(function(data) {
  			console.log('this is deleted', data)
+
  		})
+ 		getJobData();  
+
 	}
 }]);
 

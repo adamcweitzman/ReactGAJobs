@@ -25,8 +25,12 @@ router.get('/api/jobs', function(req, res) {
     });
 });
 
-router.delete('/api/jobs', function(req, res) {
+router.post('/api/delete', function(req, res) {
 	console.log('this is router', req.body.data)
+	Job.findOneAndRemove({ company: req.body.data }, function(err) {
+    	if (err) throw err;
+    	console.log('User successfully deleted!');
+  	})
 })
 
 module.exports = router;
